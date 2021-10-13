@@ -1,0 +1,146 @@
+$screen-mobile: 600px
+$screen-tablet: 1100px
+$screen-desktop: 1300px
+  
+$primary: hsl(257, 40%, 49%)
+$secondary: hsl(300, 69%, 71%)
+$white: white
+
+$heading-font: 'Poppins', sans-serif
+$body-font: 'Open Sans', sans-serif
+  
+*
+  box-sizing: border-box
+  &::before, &::after
+    box-sizing: inherit
+
+html
+  background-color: $white
+
+a:hover
+  cursor: pointer
+
+body
+  background-image: url(../images/bg-mobile.svg)
+  background-repeat: no-repeat
+  background-size: cover
+  background-color: $primary
+  font-family: $body-font
+  color: $white
+  max-width: 1300px
+  min-height: 100vh
+  margin: 0 auto
+  padding: 2rem
+  @media screen and (min-width: $screen-tablet)
+    background-image: url(../images/bg-desktop.svg)
+    padding: 2rem 3rem
+  @media screen and (min-width: $screen-desktop)
+    min-height: auto
+    margin: 4rem auto
+    box-shadow: 0 3px 10px 0px hsla(0, 0%, 0%, .5)
+
+header
+  margin-bottom: 3rem
+  img
+    width: 7.5rem
+    @media screen and (min-width: $screen-tablet)
+      width: 10rem
+
+main
+  display: flex
+  flex-direction: column
+  text-align: center
+  @media screen and (min-width: $screen-tablet)
+    flex-direction: row
+    text-align: left
+
+.product-img
+  margin-bottom: 2rem
+  @media screen and (min-width: $screen-tablet)
+    width: 60%
+  img
+    width: 100%
+    max-width: 425px
+    @media screen and (min-width: $screen-tablet)
+      max-width: none
+      padding-right: 3rem
+
+h1
+  font-family: $heading-font
+  margin-bottom: 0
+  @media screen and (min-width: $screen-tablet)
+    font-size: 2.5rem
+
+.product-info
+  display: flex
+  flex-direction: column
+  align-items: center
+  @media screen and (min-width: $screen-mobile)
+    max-width: 750px
+    margin: 0 auto
+  @media screen and (min-width: $screen-tablet)
+    align-items: flex-start
+    width: 40%
+    max-width: none
+
+.btn
+  display: block
+  font-family: $heading-font
+  font-size: .8rem
+  text-align: center
+  color: $primary
+  background-color: $white
+  margin-top: 1rem
+  padding: .75rem
+  width: 10rem
+  border-radius: 2rem
+  box-shadow: 0 3px 10px 0px hsla(0, 0%, 0%, .5)
+  @media screen and (min-width: $screen-tablet)
+    font-size: 1rem
+    width: 13rem
+  &:hover, &:focus
+    color: $white
+    background-color: $secondary
+
+footer
+  display: flex
+  flex-direction: column
+  align-items: center
+  text-align: center
+  margin-top: 3rem
+  @media screen and (min-width: $screen-mobile)
+    flex-direction: row-reverse
+    justify-content: space-between
+    align-items: center
+    margin-top: 1rem
+
+.social
+  display: flex
+  justify-content: space-evenly
+  width: 9rem
+  margin: 3rem 0 0
+  padding: 0
+  list-style-type: none
+  @media screen and (min-width: $screen-mobile)
+    margin-top: 0
+  a
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: .7rem
+    width: 2rem
+    height: 2rem
+    border-radius: 100%
+    border: 1px solid $white
+    &:hover, &:focus
+      color: $secondary
+      border-color: $secondary
+
+.attribution
+  font-size: .7rem
+  a
+    color: $secondary
+    &:hover
+      text-decoration: none
+    &:focus
+      outline: 1px solid $secondary
